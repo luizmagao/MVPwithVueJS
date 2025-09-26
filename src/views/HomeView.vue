@@ -1,4 +1,21 @@
-<script setup></script>
+<script setup>
+import { ref, watch, watchEffect } from "vue";
+
+const first_name = ref("Luiz");
+
+watch(first_name, (newValue, oldValue) => {
+  console.log(oldValue);
+  console.log(newValue);
+});
+
+const todo = ref(1);
+const data = ref(null);
+
+watchEffect(async () => {
+  const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${todo.value}`);
+  data.value = await response.json();
+});
+</script>
 
 <template>
   <div class="navbar bg-base-100 shadow-sm">
@@ -20,6 +37,8 @@
       </ul>
     </div>
   </div>
-  <div>Here</div>
-  <button class="btn btn-info">Info</button>
+  <input type="text" placeholder="neutral" class="input input-neutral" v-model="todo" />
+  <pre>
+    {{ data }}
+  </pre>
 </template>
