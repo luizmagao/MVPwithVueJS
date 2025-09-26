@@ -1,15 +1,10 @@
 <template>
   <div class="card bg-base-100 w-96 shadow-sm">
-    <figure>
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Shoes"
-      />
-    </figure>
+    <avatar-images />
     <div class="card-body">
       <h2 class="card-title">
-        Card Title
-        <div class="badge badge-secondary">NEW</div>
+        {{ description }}
+        <div class="badge badge-secondary">{{ label }}</div>
       </h2>
       <p>
         A card component has a figure, a body part, and inside body there are title and actions
@@ -23,6 +18,12 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import AvatarImages from "./AvatarImages.vue";
+defineProps({
+  description: String,
+  label: String,
+});
+</script>
 
 <style lang="scss" scoped></style>
