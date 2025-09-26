@@ -6,14 +6,6 @@
         {{ description }}
         <div class="badge badge-secondary">{{ label }}</div>
       </h2>
-      <p>
-        A card component has a figure, a body part, and inside body there are title and actions
-        parts
-      </p>
-      <div class="card-actions justify-end">
-        <div class="badge badge-outline">Fashion</div>
-        <div class="badge badge-outline">Products</div>
-      </div>
     </div>
   </div>
 </template>
