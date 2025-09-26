@@ -1,25 +1,9 @@
-<script setup></script>
-
 <template>
-  <div class="navbar bg-base-100 shadow-sm">
-    <div class="flex-1">
-      <a class="btn btn-ghost text-xl">Turma p1</a>
-    </div>
-    <div class="flex-none">
-      <ul class="menu menu-horizontal px-1">
-        <li><a>Link</a></li>
-        <li>
-          <details>
-            <summary>Parent</summary>
-            <ul class="bg-base-100 rounded-t-none p-2">
-              <li><a>Link 1</a></li>
-              <li><a>Link 2</a></li>
-            </ul>
-          </details>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div>Here</div>
-  <button class="btn btn-info">Info</button>
+  <nav-bar />
 </template>
+
+<script setup>
+import NavBar from "@/components/NavBar.vue";
+</script>
+
+<style lang="scss" scoped></style>
