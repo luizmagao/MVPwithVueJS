@@ -22,6 +22,7 @@ onMounted(async () => {
       :title="episode.name"
       :label="episode.episode"
       :air-date="episode.air_date"
+      :characters="episode.characters"
     />
   </div>
 </template>

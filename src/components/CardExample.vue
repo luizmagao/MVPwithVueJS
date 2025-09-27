@@ -1,6 +1,6 @@
 <template>
   <div class="card bg-base-100 w-96 shadow-sm my-4">
-    <avatar-persons />
+    <avatar-persons :characters="characters" />
     <div class="card-body">
       <h2 class="card-title">
         {{ title || "Aguardando dados" }}
@@ -19,6 +19,7 @@ defineProps({
   title: String,
   label: String,
   airDate: String,
+  characters: Array,
 });
 </script>
 
