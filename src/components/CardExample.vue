@@ -1,28 +1,25 @@
 <template>
-  <div class="card bg-base-100 w-96 shadow-sm">
-    <figure>
-      <img
-        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-        alt="Shoes"
-      />
-    </figure>
+  <div class="card bg-base-100 w-96 shadow-sm my-4">
+    <avatar-persons />
     <div class="card-body">
       <h2 class="card-title">
-        Card Title
-        <div class="badge badge-secondary">NEW</div>
+        {{ title || "Aguardando dados" }}
+        <div class="badge badge-secondary">{{ label }}</div>
       </h2>
-      <p>
-        A card component has a figure, a body part, and inside body there are title and actions
-        parts
-      </p>
       <div class="card-actions justify-end">
-        <div class="badge badge-outline">Fashion</div>
-        <div class="badge badge-outline">Products</div>
+        <div class="badge badge-outline">{{ airDate || "- - -" }}</div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import AvatarPersons from "./AvatarPerson.vue";
+defineProps({
+  title: String,
+  label: String,
+  airDate: String,
+});
+</script>
 
 <style lang="scss" scoped></style>
